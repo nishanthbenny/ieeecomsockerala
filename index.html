@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>IEEE Communications Society Kerala Chapter</title>
+  <style>
+   .jumbotron {
+background-image: url(https://cambr.com/assets/img/jumbotron/hero_bg_blue.png);
+background-size: cover;
+height: 100%;
+position:relative;
+}
+* { text-decoration: none;}
+.grad{
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.mini-grad{
+  background: linear-gradient(to right, #2980b9 0%, #2c3e50 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+img{
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+.myButton {
+	box-shadow: 0px 15px 20px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:18px;
+	padding:8px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+  text-decoration:none;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+  </style>
+  <script>
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+  </script>
+</head>
+<body class="body bg-light">
+
+<!-- Header navbar -->
+
+  <header>
+    <nav class="navbar navbar-light bg-light sticky-top justify-content-between p-2">
+      <a class="navbar-brand" href="#">
+        <img class="ml-4" src="./ieee-comsoc.svg" width="50%" height="auto" alt="">
+      </a>
+      <form class="form-inline grad">
+        <a class="nav-item nav-link text-dark" href="#Home">Home</a>
+        <a class="nav-item nav-link text-dark" href="#Events">Event</a>
+        <a class="nav-item nav-link text-dark" href="#Support">Escoge</a>
+        <a class="nav-item nav-link text-dark" href="#Support">Webcomm</a>
+      </form>
+    </nav>
+
+<!-- Welcome -->
+<section id="Home">
+  <div class="jumbotron jumbotron-fluid text-center bg-light" style="min-height: 500px;;">
+    <div class="container">
+      <h1>
+        <a href="" class="typewrite text-dark" data-period="2000" data-type='[ "IEEE Communications Society Kerala  Chapter","Presents", "Escoge and Webcomm" ]'>
+          <span class="wrap"></span>
+        </a>
+      </h1>
+      <p class="lead">Online Registration Portal.</p>
+    </div>
+  </div>
+  </header><br>
+  
+</section>
+
+<!-- events -->
+<section id="Events">
+<div class="evnts">
+<div class="container p-5">
+<div class="row featurette mb-5">
+  <div class="col-md-7">
+    <h2 class="featurette-heading grad">Webcomm</h2>
+    <p class="lead mini-grad">WEBCOMM is a webinar series initiated by the IEEE ComSoc Kerala Chapter. It is a collaborative event with ComSoc Student Branch Chapters in the Kerala Section. It mainly aims to provide sessions on the topics related to communication and emerging technologies. The prime focus of this initiative is to help the students to get more technical exposure and knowledge. Experts from various fields will be handling the session.</p>
+    <a class="myButton text-white my-4" href="webcommlist.html" role="button">View Details</a>
+  </div>
+  <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Image of Webcomm" style="width: auto; height: auto;" src="webcomm.png" data-holder-rendered="true">
+  </div>
+</div>
+
+<div class="row featurette mb-5">
+  <div class="col-md-7">
+    <h2 class="featurette-heading grad">Escoge</h2>
+    <p class="lead mini-grad">Escoge – Online Quiz Series IEEE ComSoc Kerala Chapter has organized an online quiz series titled “Escoge”. It is a technical quiz series which will be held once in every month. Al ready 3 editions of the quiz have been successfully executed in the month of April, May and June. Students from various sections and regions have participated in the event. The participants acquiring the top three positions of each edition are eligible to participate in the final round of Escoge, which will be conducted after the 10 editions..</p>
+    <a class="myButton text-white my-4" href="escogelist.html" role="button">View Details</a>
+  </div>
+  <div class="col-md-5">
+    <img class="featurette-image img-fluid mx-auto" data-src="holder.js/250x250/auto" alt="Image of Escoge" style="width: auto; height: auto;" src="Escoge.png" data-holder-rendered="true">
+  </div>
+</div>
+
+
+</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section id="Support">
+  <footer id="foot" class="text-center bg-dark text-light">
+  <!--<ul>
+       <div><a class="pt-3" href="#">Privacy&Terms</a>
+            <a href="#">Contact</a><div>
+  </ul>-->
+       <span >&#9400; 2020 IEEE Communications Society Kerala Chapter | All Rights Reserved</span>
+       </footer></section>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

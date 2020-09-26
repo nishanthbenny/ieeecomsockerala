@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Registation form</title>
+</head>
+<body class="body bg-dark">
+    <form action="/action_page.php" class="form p-5 "> 
+        <div class="register border  p-5  bg-white border-dark rounded-lg">
+            <!-- Name -->
+        <div class="form-group p-3">
+          <label for="usr" class="required">Name</label>
+          <input type="text" class="form-control box-center" id="usr" name="username" style="width: 80%;" required>
+          <style>
+            .required:after {
+            content:" *";
+            color: red;}
+            </style>
+        </div>
+        <!-- College -->
+        <div class="form-group p-3">
+          <label for="college" class="required">College</label>
+          <input type="text" class="form-control" id="college" name="college"style="width: 80%;" required>
+          <style>
+            .required:after {
+            content:" *";
+            color: red;}
+            </style>
+        </div>
+        <!-- Email -->
+        <div class="form-group p-3">
+            <label for="email" class="required">Email</label>
+            <input type="text" class="form-control" id="email" name="email" style="width: 80%;" required>
+            <style>
+              .required:after {
+              content:" *";
+              color: red;}
+              </style>
+          </div>
+          <!-- Phone number -->
+          <div class="form-group p-3">
+            <label for="phone" class="required">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone"style="width: 80%;" required>
+            <style>
+              .required:after {
+              content:" *";
+              color: red;}
+              </style>
+          </div>
+          <!-- ieee membership -->
+          <div class="form-group form-check px-5">
+              <h6>Do you have IEEE membership?</h6>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="membership" id="yes" value="option1" checked>
+                <label class="form-check-label" for="yes">
+                  Yes
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="membership" id="no" value="option2">
+                <label class="form-check-label" for="no">
+                  No
+                </label>
+              </div><br>
+              <!-- COMSOC membership -->
+              <div class="form-group form-checkpx-5">
+                <h6>Are you have COMSOC membership</h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="comsocmembership" id="yes" value="option1" checked>
+                  <label class="form-check-label" for="yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="comsocmembership" id="no" value="option2">
+                  <label class="form-check-label" for="no">
+                    No
+                  </label>
+                </div><br>
+
+                <!-- ieee section -->
+                <div class="form-group px-1">
+                  <label for="section" class="section"><h6>IEEE Section <br> eg: Kerala section</h6></label>
+                  <input type="text" class="form-control box-center" id="usr" name="username" style="width: 80%;" required><br>
+
+
+        <button type="submit" class="btn btn-lg btn-success">Submit</button>
+      </form>
+    </div>
+    
+    
+</body>
+</html>
